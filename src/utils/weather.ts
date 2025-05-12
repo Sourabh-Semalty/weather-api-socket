@@ -1,12 +1,12 @@
 import config from "../config";
 
-const BASE_URL = "http://api.weatherstack.com/current";
+const BASE_URL = "http://api.weatherapi.com/v1/current.json";
 
 export const getWeatherUrl = (city: string) => {
   const params = new URLSearchParams({
-    access_key: config.WEATHER_API_KEY as string,
-    query: city,
-    units: "m" // For metric units
+    key: config.WEATHER_API_KEY as string,
+    q: city,
+    aqi: "no" // We don't need air quality data for now
   });
   
   return `${BASE_URL}?${params.toString()}`;

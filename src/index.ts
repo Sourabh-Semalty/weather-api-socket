@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.sendFile(join(__dirname, 'index.html'));
 });
 
-const UPDATE_INTERVAL = 10000; // 10 seconds
+const UPDATE_INTERVAL = 1 * 60 * 60 * 1000; // 1 hour
 const connectedUsers = new Map();
 
 // Function to emit weather updates to all connected clients
